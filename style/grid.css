@@ -1,25 +1,29 @@
 body{
     display: grid;
+    grid-template-rows: 100px calc(100vh - 100px);
     grid-template-columns:30% 25% 45%;
     grid-template-areas: 
-    "aside-esquerto main-centro aside-direta"
+    "nav nav nav"
+    "esquerto centro direta"
     ;
+}
+
+.container-nav{
+    border: solid 1px #000;
+    grid-area: nav;
 }
 
 .aside-esquerda{
     border: solid 1px #000;
-    padding: 50px;
-    height: 100vh;
+    grid-area: esquerto;
 }
 
 .main-centro{
     border: solid 1px #000;
-    padding: 50px;
-    height: 100vh;
+    grid-area: centro;
 }
 
 .aside-direita{
     border: solid 1px #000;
-    padding: 50px;
-    height: 100vh;
+    grid-area: direta;
 }
