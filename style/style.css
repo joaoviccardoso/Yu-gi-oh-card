@@ -1,5 +1,7 @@
 :root{
     --font: "Roboto";
-    --cor-fundo: #fff;
-    --cor-letra: #888;
+    --cor-fundo: #000000;
+    --cor-container: #0B192C;
+    --cor-container-2: #1E3E62;
+    --cor-hover:#FF6500;
 }

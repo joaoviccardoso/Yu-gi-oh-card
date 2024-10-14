@@ -1,7 +1,7 @@
 body{
     display: grid;
     grid-template-rows: 100px calc(100vh - 100px);
-    grid-template-columns:30% 25% 45%;
+    grid-template-columns:30% 43% 27%;
     grid-template-areas: 
     "nav nav nav"
     "esquerto centro direta"
