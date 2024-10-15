@@ -18,32 +18,7 @@
     </nav>
 
     <aside class="aside-esquerda">
-       <div class="container-info-esquerda">
-           <div class="container-info-img">
-               <img src="#" alt="card" class="img-info">
-           </div>
-           <div class="container-informação-carta">
-               <ul>
-                  <li>
-                    <div class="container_infomacao">
-                        <img src="#" alt="" class="img-estrela-nivel">
-                        <p class="nivel-da-card"></p>
-                    </div> 
-                    <div class="container_infomacao">
-                        <img src="#" alt="" class="img-atk">
-                        <p class="atk-da-card"></p>
-                    </div>
-                    <div class="container_infomacao">
-                        <img src="#" alt="" class="img-defesa">
-                        <p class="defesa-da-card"></p>
-                    </div>   
-                  </li>
-               </ul>
-               <div class="conteiner-descricao-carta">
-                  <p class="descricao"></p>
-               </div>
-           </div>
-       </div>
+      
     </aside>
 
     <main class="main-centro">
@@ -51,7 +26,115 @@
     </main>
 
     <aside class="aside-direita"> 
-        <h1>aside-direita</h1>     
+        <h3>Filters</h3> 
+        
+        <ul class="container-ul-filter">
+
+            <li>
+                <label for="pesquisar">Search</label>
+                <input type="text" placeholder="Name" class="pesquisar" name="pesquisar" id="pesquisar" name="pesquisar">
+            </li>
+
+            <li class="container-item">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Card Category</option>
+                    <option value="Normal Monster">Normal Monster</option>
+                    <option value="Effect Monster">Effect Monster</option>
+                    <option value="Ritual Monster">Ritual Monster</option>
+                    <option value="Fusion Monster">Fusion Monster</option>
+                    <option value="Synchro Monste">Synchro Monster</option>
+                    <option value="XYZ Monster">XYZ Monster</option>
+                    <option value="Pendulum Monster">Pendulum Monster</option>
+                    <option value="Pendulum Effect Monster">Pendulum Effect Monster</option>
+                    <option value="XYZ/Pendulum Monster">XYZ/Pendulum Monster</option>
+                    <option value="Spell">Spell</option>
+                    <option value="Trap">Trap</option>
+                </select>
+            </li>
+
+            <li class="container-item">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Level</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                </select>
+            </li>
+
+            <li class="container-item">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Attribute</option>
+                    <option value="Dark">Dark</option>
+                    <option value="Light">Light</option>
+                    <option value="Water">Water</option>
+                    <option value="Fire">Fire</option>
+                    <option value="Earth">Earth</option>
+                    <option value="Wind">Wind</option>
+                    <option value="Divine">Divine</option>
+                </select>
+            </li>
+
+            <li class="container-item">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Type</option>
+                    <option value="">Dragon</option>
+                    <option value="">Zombie</option>
+                    <option value="">Fiend</option>
+                    <option value="">Pyro</option>
+                    <option value="">Sea Serpent</option>
+                    <option value="">Rock</option>
+                    <option value="">Machine</option>
+                    <option value="">Fish</option>
+                    <option value="">Dinosaur</option>
+                    <option value="">Insect</option>
+                    <option value="">Beast</option>
+                    <option value="">Beast-Warrior</option>
+                    <option value="">Plant</option>
+                    <option value="">Aqua</option>
+                    <option value="">Warrior</option>
+                    <option value="">Winged Beast</option>
+                    <option value="">Fairy</option>
+                    <option value="">Spallcaster</option>
+                    <option value="">Thunder</option>
+                    <option value="">Reptile</option>
+                    <option value="">Psychic</option>
+                    <option value="">Wyrm</option>
+                    <option value="">Divine-Beast</option>
+                </select>
+            </li>
+
+            <li class="container-item">
+                <div>
+                    <label for="min-atk">ATK
+                        <input type="text" placeholder="Min Atk" class="min-atk" name="min-atk" id="min-atk" name="min-atk">
+                    </label>
+                    <label for="max-atk">ATK
+                        <input type="text" placeholder="max Atk" class="max-atk" name="max-atk" id="max-atk" name="max-atk">
+                    </label>
+                </div>
+            </li>
+
+            <li class="container-item">
+                <div>
+                    <label for="min-def">DEF
+                        <input type="text" placeholder="Min def" class="min-def" name="min-def" id="min-def" name="min-def">
+                    </label>
+                    <label for="max-def">DEF
+                        <input type="text" placeholder="max def" class="max-def" name="max-def" id="max-def" name="max-def">
+                    </label>
+                </div>
+            </li>
+        </ul>
     </aside>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="./JS/api.js"></script>
