@@ -16,6 +16,10 @@ body{
 .aside-esquerda{
     border: solid 1px #000;
     grid-area: esquerto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .main-centro{

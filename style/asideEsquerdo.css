@@ -1,0 +1,28 @@
+:root{
+    --font: "Roboto";
+    --cor-fundo: #000000;
+    --cor-container: #0B192C;
+    --cor-container-2: #1E3E62;
+    --cor-hover:#FF6500;
+}
+
+.container-aside-esquerdo{
+    width: 80%;
+    height: 90%;
+    border: 1px solid #000;
+}
+
+.container-info-esquerda{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
+
+    margin: 2rem 1rem;
+}
+
+.ul-informacao-item{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 3rem;
+}
