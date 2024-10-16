@@ -1,15 +1,8 @@
-:root{
-    --font: "Roboto";
-    --cor-fundo: #000000;
-    --cor-container: #0B192C;
-    --cor-container-2: #1E3E62;
-    --cor-hover:#FF6500;
-}
-
 .container-aside-esquerdo{
     width: 80%;
-    height: 90%;
-    border: 1px solid #000;
+    height: auto;
+    background-color: var(--cor-container);
+    border-radius: 12px;
 }
 
 .container-info-esquerda{
@@ -18,11 +11,25 @@
     align-items: center;
     row-gap: 2rem;
 
-    margin: 2rem 1rem;
+    margin: 1.5rem 1rem;
+    
 }
 
 .ul-informacao-item{
     display: flex;
     justify-content: space-around;
     margin-bottom: 3rem;
+
+    background-color: var(--cor-container-2);
+    border-radius: 8px;
+    color: var(--cor-letras);
+}   
+
+.conteiner-descricao-carta{
+    height: 180px;
+    padding: 1rem;
+
+    color: var(--cor-letras);
+    background-color: var(--cor-container-2);
+    border-radius: 8px; 
 }

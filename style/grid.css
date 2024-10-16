@@ -1,4 +1,18 @@
+:root{
+    --font: "Roboto";
+    --cor-fundo: #111111;
+    --cor-container: #0B192C;
+    --cor-container-2: #1E3E62;
+    --cor-hover:#FF6500;
+    --cor-letras: #fff;
+}
+
+
 body{
+    background: var(--cor-fundo);
+    color: var(--cor-letras);
+    font-family: var(--font);
+    font-weight: 400;
     display: grid;
     grid-template-rows: 100px calc(100vh - 100px);
     grid-template-columns:30% 43% 27%;
@@ -9,12 +23,12 @@ body{
 }
 
 .container-nav{
-    border: solid 1px #000;
+    border: solid 1px #fff;
     grid-area: nav;
 }
 
 .aside-esquerda{
-    border: solid 1px #000;
+    border: solid 1px #fff;
     grid-area: esquerto;
 
     display: flex;
@@ -23,11 +37,11 @@ body{
 }
 
 .main-centro{
-    border: solid 1px #000;
+    border: solid 1px #FFF;
     grid-area: centro;
 }
 
 .aside-direita{
-    border: solid 1px #000;
+    border: solid 1px #fff;
     grid-area: direta;
 }
