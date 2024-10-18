@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./style/grid.css">
     <link rel="stylesheet" href="./style/asideEsquerdo.css">
     <link rel="stylesheet" href="./style/nav.css">
+    <link rel="stylesheet" href="./style/asideDireita.css">
 </head>
 <body>
     <nav class="container-nav">
@@ -33,16 +34,16 @@
     </main>
 
     <aside class="aside-direita"> 
-        <h3>Filters</h3> 
+        <legend>Filters</legend> 
         
-        <ul class="container-ul-filter">
+        <fieldset class="grupo-filtros">
 
-            <li>
+            <div>
                 <label for="pesquisar">Search</label>
                 <input type="text" placeholder="Name" class="pesquisar" name="pesquisar" id="pesquisar" name="pesquisar">
-            </li>
+            </div>
 
-            <li class="container-item">
+            <div class="container-item">
                 <select class="form-select" aria-label="Default select example">
                     <option selected>Card Category</option>
                     <option value="Normal Monster">Normal Monster</option>
@@ -57,9 +58,9 @@
                     <option value="Spell">Spell</option>
                     <option value="Trap">Trap</option>
                 </select>
-            </li>
+            </div>
 
-            <li class="container-item">
+            <div class="container-item">
                 <select class="form-select" aria-label="Default select example">
                     <option selected>Level</option>
                     <option value="1">1</option>
@@ -76,9 +77,9 @@
                     <option value="12">12</option>
                     <option value="13">13</option>
                 </select>
-            </li>
+            </div>
 
-            <li class="container-item">
+            <div class="container-item">
                 <select class="form-select" aria-label="Default select example">
                     <option selected>Attribute</option>
                     <option value="Dark">Dark</option>
@@ -89,9 +90,9 @@
                     <option value="Wind">Wind</option>
                     <option value="Divine">Divine</option>
                 </select>
-            </li>
+            </div>
 
-            <li class="container-item">
+            <div class="container-item">
                 <select class="form-select" aria-label="Default select example">
                     <option selected>Type</option>
                     <option value="">Dragon</option>
@@ -118,9 +119,9 @@
                     <option value="">Wyrm</option>
                     <option value="">Divine-Beast</option>
                 </select>
-            </li>
+            </div>
 
-            <li class="container-item">
+            <div class="container-item">
                 <div>
                     <label for="min-atk">ATK
                         <input type="text" placeholder="Min Atk" class="min-atk" name="min-atk" id="min-atk" name="min-atk">
@@ -129,9 +130,9 @@
                         <input type="text" placeholder="max Atk" class="max-atk" name="max-atk" id="max-atk" name="max-atk">
                     </label>
                 </div>
-            </li>
+            </div>
 
-            <li class="container-item">
+            <div class="container-item">
                 <div>
                     <label for="min-def">DEF
                         <input type="text" placeholder="Min def" class="min-def" name="min-def" id="min-def" name="min-def">
@@ -140,7 +141,7 @@
                         <input type="text" placeholder="max def" class="max-def" name="max-def" id="max-def" name="max-def">
                     </label>
                 </div>
-            </li>
+            </div>
         </ul>
     </aside>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
