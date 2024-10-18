@@ -7,7 +7,6 @@
     --cor-letras: #fff;
 }
 
-
 body{
     background: var(--cor-fundo);
     color: var(--cor-letras);
