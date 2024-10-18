@@ -22,13 +22,11 @@ body{
     ;
 }
 
-.container-nav{
-    border: solid 1px #fff;
+.container-nav{ 
     grid-area: nav;
 }
 
 .aside-esquerda{
-    border: solid 1px #fff;
     grid-area: esquerto;
 
     display: flex;
@@ -37,11 +35,9 @@ body{
 }
 
 .main-centro{
-    border: solid 1px #FFF;
     grid-area: centro;
 }
 
 .aside-direita{
-    border: solid 1px #fff;
     grid-area: direta;
 }
