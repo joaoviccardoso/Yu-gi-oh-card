@@ -18,6 +18,8 @@
 .ul-informacao-item{
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    height: 50px;
     margin-bottom: 3rem;
 
     background-color: var(--cor-container-2);
@@ -32,4 +34,19 @@
     color: var(--cor-letras);
     background-color: var(--cor-container-2);
     border-radius: 8px; 
+}
+
+.container_infomacao{
+    display: flex;
+    align-items: center;
+}
+
+.informacao{
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin :0 0 0 5px;
+}
+
+.img-icones{
+    width: 25px;
 }

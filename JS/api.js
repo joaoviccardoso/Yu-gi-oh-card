@@ -17,20 +17,20 @@ async function pegarDadosDaApi() {
                <ul class="ul-informacao-item">
                   <li>
                     <div class="container_infomacao">
-                        <img src="#" alt="" class="img-estrela-nivel">
-                        <p class="nivel-da-card">${dadosApi.data[0].level}</p>
+                        <img src="img/estrela.png" alt="" class="img-estrela-nivel img-icones">
+                        <p class="nivel-da-card informacao">${dadosApi.data[0].level}</p>
                     </div>
                   </li> 
                   <li>  
                     <div class="container_infomacao">
-                        <img src="#" alt="" class="img-atk">
-                        <p class="atk-da-card">${dadosApi.data[0].atk}</p>
+                        <img src="img/espadas-cruzadas.png" alt="" class="img-atk img-icones">
+                        <p class="atk-da-card informacao">${dadosApi.data[0].atk}</p>
                     </div>
                   </li>  
                   <li>
                     <div class="container_infomacao">
-                        <img src="#" alt="" class="img-defesa">
-                        <p class="defesa-da-card">${dadosApi.data[0].def}</p>
+                        <img src="img/escudo.png" alt="" class="img-defesa img-icones">
+                        <p class="defesa-da-card informacao">${dadosApi.data[0].def}</p>
                     </div>   
                   </li>
                </ul>

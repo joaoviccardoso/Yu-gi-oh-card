@@ -12,6 +12,7 @@ body{
     background: var(--cor-fundo);
     color: var(--cor-letras);
     font-family: var(--font);
+    font-size: 1rem     ;
     font-weight: 400;
     display: grid;
     grid-template-rows: 100px calc(100vh - 100px);
