@@ -1,13 +1,19 @@
 .container-card{
+    height: calc(100vh - 150px);
     display: flex;
     justify-content: space-around;
     align-items: center;
     row-gap: 1rem;
     flex-wrap: wrap;
 
-    margin-top: 2rem;
+    margin-top: 1rem;
+    overflow-y: scroll;
 }
 
 .card{
-    width: 240px;
+    width: 180px;
+}
+
+.card:hover{
+    box-shadow: var(--cor-hover) 0px 10px 36px 0px, var(--cor-hover) 0px 0px 0px 1px;
 }

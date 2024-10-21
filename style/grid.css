@@ -9,6 +9,7 @@
 
 body{
     background: var(--cor-fundo);
+    height: 100vh;
     color: var(--cor-letras);
     font-family: var(--font);
     font-size: 1rem     ;
@@ -36,6 +37,11 @@ body{
 
 .main-centro{
     grid-area: centro;
+    background-color: var(--cor-container);
+    border-radius: 12px;
+    height: calc(100vh - 120px);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .aside-direita{
