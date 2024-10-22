@@ -11,8 +11,31 @@
     height: 720px;
 }
 
+.texto-filtro{
+   text-align: center;
+   margin-top: 1rem;
+
+   font-size: 2rem;
+}
+
+.container-search{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .container-item{
     margin: 3rem 3rem;
+}
+
+.container-item-hover:hover{
+    box-shadow: var(--cor-hover) 0px 8px 20px 0px, var(--cor-hover) 0px 0px 0px 1px;
+    border-radius: 8px;
+}
+
+.texto-pesquisar{
+    font-size: 1.5rem;
 }
 
 .pesquisar{
