@@ -1,4 +1,33 @@
 .container-nav{
+    display: flex;
+    justify-content: space-between;
     height: 90px;
     background-color: #0d0d0d;
+}
+
+.link-titulo{
+    align-self: center;
+    margin-left: 1rem;
+}
+
+.ul-links{
+    display: flex;
+    gap: 1.5rem;
+    margin-right: 1rem;
+}
+
+.links-item{
+    margin-top: .5rem;
+}
+
+.img-link{
+    width: 45px;
+}
+
+.link{
+    color: var(--cor-letras);
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: var( --font);
+    text-decoration: none;
 }
