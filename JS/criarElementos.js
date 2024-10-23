@@ -39,13 +39,13 @@ async function criarElementoEsquesta(){
     `
 }
 
-//<div>
-//<img src="${card.card_images[0].image_url_small}" alt="card" class="card">
-//</div>
-
 async function criarListaCard(cards){
   let cardHtml = '';
-  cards.data.forEach(criarElementoCard);
+  try{
+    cards.data.forEach(criarElementoCard);
+  } catch {
+    alert("erro ao criar os cards")
+  }
 }
 
 function criarElementoCard(card){
@@ -55,9 +55,18 @@ function criarElementoCard(card){
   img.classList.add("card")
   img.src = `${card.card_images[0].image_url_small}`
   img.alt = "card"
+  img.id = `${card.id}`
+  img.onclick = function() {
+    pegarElementoClicado(this.id)
+  }
 
   div.appendChild(img)
   containerCards.appendChild(div)
+}
+
+function pegarElementoClicado(id){
+  const elemento = document.getElementById(id)
+  console.log(elemento)
 }
 
 criarElementoEsquesta()
