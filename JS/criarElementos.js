@@ -39,16 +39,25 @@ async function criarElementoEsquesta(){
     `
 }
 
+//<div>
+//<img src="${card.card_images[0].image_url_small}" alt="card" class="card">
+//</div>
+
 async function criarListaCard(cards){
-    let cardHtml = '';
-    cards.data.forEach(card => { 
-    cardHtml += `
-      <div>
-         <img src="${card.card_images[0].image_url_small}" alt="card" class="card">
-      </div>
-    `; 
-    });
-  containerCards.innerHTML = cardHtml;
+  let cardHtml = '';
+  cards.data.forEach(criarElementoCard);
+}
+
+function criarElementoCard(card){
+  const div = document.createElement("div");
+
+  const img = document.createElement("img");
+  img.classList.add("card")
+  img.src = `${card.card_images[0].image_url_small}`
+  img.alt = "card"
+
+  div.appendChild(img)
+  containerCards.appendChild(div)
 }
 
 criarElementoEsquesta()

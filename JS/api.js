@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded",()=>{
-    //api.pegarDadosDaApi()
+    api.pegarDadosDaApi()
 })
 
 const cardsApi = 13000
