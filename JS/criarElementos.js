@@ -1,10 +1,7 @@
 const containerCards = document.querySelector(".container-card");
 const asideEsquerda = document.querySelector(".container-aside-esquerdo")
 
-async function criarElementoEsquesta(){
-    const resposta = await fetch("https://db.ygoprodeck.com/api/v7/cardinfo.php?name=Dark Magician");
-    const dadosApi = await resposta.json()
-
+async function criarElementoEsquesta(dadosApi){
     asideEsquerda.innerHTML = `
         <div class="container-info-esquerda">
            <div class="container-info-img">
@@ -64,9 +61,9 @@ function criarElementoCard(card){
   containerCards.appendChild(div)
 }
 
-function pegarElementoClicado(id){
+async function pegarElementoClicado(id){
   const elemento = document.getElementById(id)
-  console.log(elemento)
+  const dadoDaCardClicada = await api.pegarDadosDaApiPorId(id)
+  criarElementoEsquesta(dadoDaCardClicada)
 }
 
-criarElementoEsquesta()
