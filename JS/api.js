@@ -2,8 +2,6 @@ document.addEventListener("DOMContentLoaded",()=>{
     api.pegarDadosDaApi()
 })
 
-const cardsApi = 13000
-
 api = {
     async pegarDadosDaApi() {
         try {
@@ -20,6 +18,7 @@ api = {
         try {
             const resposta = await fetch(`https://db.ygoprodeck.com/api/v7/cardinfo.php?id=${id}`)
             const dadoApiId = await resposta.json()
+            console.log(dadoApiId)
             return dadoApiId
         } catch (error) {
             alert("erro ao buscar dados da api pelo id")
