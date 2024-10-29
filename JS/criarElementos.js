@@ -21,6 +21,7 @@ async function criarElementoEsquesta(dadosApi){
     const ulInfo = document.createElement("ul");
     ulInfo.classList.add("ul-informacao-item");
 
+    if(dadosApi.data[0].atk){
     const liNivel = document.createElement("li");
 
     const divInfo = document.createElement("div");
@@ -73,6 +74,11 @@ async function criarElementoEsquesta(dadosApi){
     divInfo3.appendChild(imgDef)
     divInfo3.appendChild(pDescricaoDef)
 
+    ulInfo.appendChild(liNivel)
+    ulInfo.appendChild(liAtk)
+    ulInfo.appendChild(liDef)
+    } 
+  
     const divDescricao = document.createElement("div")
     divDescricao.classList.add("conteiner-descricao-carta");
     
@@ -81,11 +87,7 @@ async function criarElementoEsquesta(dadosApi){
     pDescricaoDaCard.textContent = `${dadosApi.data[0].desc}`;
 
     divDescricao.appendChild(pDescricaoDaCard)
-
     divContainerInfoImg.appendChild(imgInfo)
-    ulInfo.appendChild(liNivel)
-    ulInfo.appendChild(liAtk)
-    ulInfo.appendChild(liDef)
     divContainerInfoCard.appendChild(ulInfo)
     divContainerInfoCard.appendChild(divDescricao)
     divContainerPrincipal.appendChild(divContainerInfoImg)

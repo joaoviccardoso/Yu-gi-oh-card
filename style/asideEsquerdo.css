@@ -34,6 +34,7 @@
     color: var(--cor-letras);
     background-color: var(--cor-container-2);
     border-radius: 8px; 
+    overflow-y: scroll;
 }
 
 .container_infomacao{
