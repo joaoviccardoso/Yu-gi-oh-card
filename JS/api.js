@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded",()=>{
-    api.pegarDadosDaApi()
+    criarListaCard()
 })
 
 api = {
@@ -7,8 +7,7 @@ api = {
         try {
             const resposta = await fetch("https://db.ygoprodeck.com/api/v7/cardinfo.php");
             const dadosApi = await resposta.json()
-            criarListaCard(dadosApi)
-            console.log(dadosApi.data[2])
+            return dadosApi
         } catch (error) {
             alert("erro ao pegar os dados da api")
         }

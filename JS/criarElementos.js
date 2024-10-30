@@ -93,45 +93,15 @@ async function criarElementoEsquesta(dadosApi){
     divContainerPrincipal.appendChild(divContainerInfoImg)
     divContainerPrincipal.appendChild(divContainerInfoCard)
     asideEsquerda.appendChild(divContainerPrincipal)
-
-    /*asideEsquerda.innerHTML = `
-        <div class="container-info-esquerda">
-           <div class="container-info-img">
-               <img src="${dadosApi.data[0].card_images[0].image_url_small}" alt="card" class="img-info">
-           </div>
-           <div class="container-informação-carta">
-               <ul class="ul-informacao-item">
-                  <li>
-                    <div class="container_infomacao">
-                        <img src="img/estrela.png" alt="${dadosApi.data[0].name}" class="img-estrela-nivel img-icones">
-                        <p class="nivel-da-card informacao">${dadosApi.data[0].level}</p>
-                    </div>
-                  </li> 
-                  <li>  
-                    <div class="container_infomacao">
-                        <img src="img/espadas-cruzadas.png" alt="atk" class="img-atk img-icones">
-                        <p class="atk-da-card informacao">${dadosApi.data[0].atk}</p>
-                    </div>
-                  </li>  
-                  <li>
-                    <div class="container_infomacao">
-                        <img src="img/escudo.png" alt="" class="img-defesa img-icones">
-                        <p class="defesa-da-card informacao">${dadosApi.data[0].def}</p>
-                    </div>   
-                  </li>
-               </ul>
-               <div class="conteiner-descricao-carta">
-                  <p class="descricao">${dadosApi.data[0].desc}</p>
-               </div>
-           </div>
-       </div>
-    `*/
 }
 
-async function criarListaCard(cards){
+async function criarListaCard(){
+  const respostaApi = await api.pegarDadosDaApi()
   let cardHtml = '';
   try{
-    cards.data.forEach(criarElementoCard);
+    respostaApi.data.forEach(card =>{
+      criarElementoCard(card)
+    });
   } catch {
     alert("erro ao criar os cards")
   }
