@@ -3,49 +3,26 @@ const btnFiltrar = document.getElementById("filtrar");
 const meuSet = new Set()
 
 btnFiltrar.onclick = async () =>{
-    const CardCategory = document.querySelector(".category").value;
-    const level = document.querySelector(".level").value;
-    const attribute = document.querySelector(".attribute").value;
+    const categoryPesquisa = document.querySelector(".category").value;
+    const levelPesquisa = document.querySelector(".level").value;
+    const attributePesquisa = document.querySelector(".attribute").value;
 
     let meuSetArray = [];
 
     const dadosDaApi = await api.pegarDadosDaApi()
     console.log(dadosDaApi)
 
-    const cardFiltradosCategory = await dadosDaApi.data.filter(card =>{
-        const matchCategory = CardCategory ? card.type.includes(CardCategory) : true; 
-        return matchCategory
+    dadosDaApi.data.forEach(card => {
+        const categoryFiltrada = categoryPesquisa ? card.type.includes(categoryPesquisa) : true; 
+        const levelFiltrada = levelPesquisa ? card.level == Number(levelPesquisa) : true;
+        const attributeFiltrada = attributePesquisa ? card.attribute == attributePesquisa : true;
+
+        if(categoryFiltrada && attributeFiltrada && levelFiltrada){
+            meuSet.add(card)
+        }
     })
-
-    const cardFiltradosLevel = await dadosDaApi.data.filter(card => {
-        const matchLevel = level ? card.level == Number(level) : true;
-        return matchLevel
-    })
-
-    const cardFiltradosAttribute = await dadosDaApi.data.filter(card =>{
-        const matchAttribute = attribute ? card.attribute == attribute : true;
-        return matchAttribute
-    })
-
-    if (cardFiltradosCategory.length !== 0 && cardFiltradosAttribute.length !== 0 && cardFiltradosLevel.length !== 0) {
-        PassarValorParaSet(cardFiltradosCategory)
-        PassarValorParaSet(cardFiltradosAttribute)
-        PassarValorParaSet(cardFiltradosLevel)
-
-        meuSetArray = Array.from(meuSet)
-        
-        const todosOsCardFiltrados = meuSetArray.filter(card =>{
-            const cardCategory = CardCategory ? card.type.includes(CardCategory) : true; 
-            const cardAttribute = attribute ? card.attribute == attribute : true;
-            const cardLevel = level ? card.level == Number(level) : true;
-
-            return cardAttribute && cardCategory && cardLevel
-        })
-        
-        console.log(todosOsCardFiltrados)
-    } else {
-        alert("se NAO TIVER item e pra cair aqui")
-    }
+     
+    console.log(meuSet)
 }
 
 function PassarValorParaSet(cardFiltro){
