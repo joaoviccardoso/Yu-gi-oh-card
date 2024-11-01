@@ -1,10 +1,13 @@
 const btnFiltrar = document.getElementById("filtrar");
 
+const meuSet = new Set()
+
 btnFiltrar.onclick = async () =>{
     const CardCategory = document.querySelector(".category").value;
     const level = document.querySelector(".level").value;
     const attribute = document.querySelector(".attribute").value;
-    const type = document.querySelector(".type").value;
+
+    let meuSetArray = [];
 
     const dadosDaApi = await api.pegarDadosDaApi()
     console.log(dadosDaApi)
@@ -24,10 +27,29 @@ btnFiltrar.onclick = async () =>{
         return matchAttribute
     })
 
-    const cardFiltradosType = await dadosDaApi.data.filter(card => {
-        const matchType = type ? (card.typeline && Array.isArray(card.typeline) && card.typeline[0].includes(type)) : true;
-        return matchType
-    })
+    if (cardFiltradosCategory.length !== 0 && cardFiltradosAttribute.length !== 0 && cardFiltradosLevel.length !== 0) {
+        PassarValorParaSet(cardFiltradosCategory)
+        PassarValorParaSet(cardFiltradosAttribute)
+        PassarValorParaSet(cardFiltradosLevel)
 
-    console.log(cardFiltradosCategory, cardFiltradosAttribute, cardFiltradosLevel, cardFiltradosType)
+        meuSetArray = Array.from(meuSet)
+        
+        const todosOsCardFiltrados = meuSetArray.filter(card =>{
+            const cardCategory = CardCategory ? card.type.includes(CardCategory) : true; 
+            const cardAttribute = attribute ? card.attribute == attribute : true;
+            const cardLevel = level ? card.level == Number(level) : true;
+
+            return cardAttribute && cardCategory && cardLevel
+        })
+        
+        console.log(todosOsCardFiltrados)
+    } else {
+        alert("se NAO TIVER item e pra cair aqui")
+    }
+}
+
+function PassarValorParaSet(cardFiltro){
+    cardFiltro.forEach(card => {
+        meuSet.add(card)
+    });
 }
