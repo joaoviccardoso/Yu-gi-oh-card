@@ -1,40 +1,37 @@
 const btnFiltrar = document.getElementById("filtrar");
-
-const meuSet = new Set()
+const categoryPesquisa = document.querySelector(".category");
+const levelPesquisa = document.querySelector(".level");
+const attributePesquisa = document.querySelector(".attribute");
 
 btnFiltrar.onclick = async () =>{
-    const categoryPesquisa = document.querySelector(".category").value;
-    const levelPesquisa = document.querySelector(".level").value;
-    const attributePesquisa = document.querySelector(".attribute").value;
-
+    const meuSet = new Set()
     let meuSetArray = [];
+    try { 
+        const dadosDaApi = await api.pegarDadosDaApi()
 
-    const dadosDaApi = await api.pegarDadosDaApi()
-    console.log(dadosDaApi)
-
-    dadosDaApi.data.forEach(card => {
-        const categoryFiltrada = categoryPesquisa ? card.type.includes(categoryPesquisa) : true; 
-        const levelFiltrada = levelPesquisa ? card.level == Number(levelPesquisa) : true;
-        const attributeFiltrada = attributePesquisa ? card.attribute == attributePesquisa : true;
-
-        console.log(categoryFiltrada, levelFiltrada, attributeFiltrada)
-        if(categoryFiltrada && attributeFiltrada && levelFiltrada){
-            meuSet.add(card)
-        } else if(categoryFiltrada && attributeFiltrada){
-            meuSet.add(card)
-        } else if(categoryFiltrada && levelFiltrada){
-            meuSet.add(card)
-        } else if(levelFiltrada && attributeFiltrada){
-            meuSet.add(card)
-        } else if(categoryFiltrada){
-            if(categoryPesquisa === "Spell"){
-                meuSet.add(card)
-            } else if(categoryPesquisa === "Trap"){
-                meuSet.add(card)
-            }
+        if(categoryPesquisa.value == "Card Category" && levelPesquisa.value == "Level" && attributePesquisa.value == "Attribute"){
+            alert("Nem um valor selecionado para filtrar")
+            return
         }
-        //Joao tests all the card in the category tomorrow
-    })
-     
-    console.log(meuSet)
+
+        dadosDaApi.data.forEach(card => {
+            const categoryFiltrada = categoryPesquisa.value !== "Card Category" ? card.type.includes(categoryPesquisa.value) : true; 
+            const levelFiltrada = levelPesquisa.value !== "Level" ? card.level === Number(levelPesquisa.value) : true;
+            const attributeFiltrada = attributePesquisa.value !== "Attribute" ? card.attribute === attributePesquisa.value : true;
+
+            if (categoryFiltrada && levelFiltrada && attributeFiltrada) {
+                meuSet.add(card);
+            }
+        });
+
+        meuSetArray = Array.from(meuSet)
+        console.log(meuSetArray)
+        containerCards.innerHTML = ""
+        meuSetArray.forEach(card =>{
+            criarElementoCard(card)
+        })
+    } catch (error) {
+        alert("erro ao gerar o filtro")
+    }
 }
+
