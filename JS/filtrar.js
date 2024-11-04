@@ -25,13 +25,20 @@ btnFiltrar.onclick = async () =>{
         });
 
         meuSetArray = Array.from(meuSet)
-        console.log(meuSetArray)
+        if(meuSetArray == ""){
+            alert("Nem uma carda encontrada")
+            return
+        }
         containerCards.innerHTML = ""
+
         meuSetArray.forEach(card =>{
             criarElementoCard(card)
         })
     } catch (error) {
         alert("erro ao gerar o filtro")
     }
+    categoryPesquisa.value = "Card Category" 
+    levelPesquisa.value = "Level"
+    attributePesquisa.value = "Attribute"
 }
 
