@@ -58,8 +58,18 @@ async function filtrarPesquisa(){
         const pesquisaFiltrada = dadosDaApi.data.filter(card => {
             return card.name.includes(campoInput)
         })
-        
+
+        if(pesquisaFiltrada.length === 0){
+            alert("nem um card encontrado com esse nome")
+            return
+        }
+
+        containerCards.innerHTML = ""
+
         console.log(pesquisaFiltrada)
+        pesquisaFiltrada.forEach(card => {
+            criarElementoCard(card)
+        })
     } catch{
         alert('erro ao filtrar pesquisa')
     }
