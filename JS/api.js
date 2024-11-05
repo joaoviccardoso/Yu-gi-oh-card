@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded",()=>{
-    criarListaCard()
+    //criarListaCard()
 })
 
 api = {
@@ -22,6 +22,6 @@ api = {
         } catch (error) {
             alert("erro ao buscar dados da api pelo id")
         }
-    }
+    },
 }
 

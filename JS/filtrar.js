@@ -1,7 +1,10 @@
 const btnFiltrar = document.getElementById("filtrar");
+const btnPesquisar = document.getElementById("pesquisarBtn");
 const categoryPesquisa = document.querySelector(".category");
 const levelPesquisa = document.querySelector(".level");
 const attributePesquisa = document.querySelector(".attribute");
+
+btnPesquisar.addEventListener("click", filtrarPesquisa)
 
 btnFiltrar.onclick = async () =>{
     const meuSet = new Set()
@@ -26,7 +29,7 @@ btnFiltrar.onclick = async () =>{
 
         meuSetArray = Array.from(meuSet)
         if(meuSetArray == ""){
-            alert("Nem uma carda encontrada")
+            alert("Nem um card encontrada")
             return
         }
         containerCards.innerHTML = ""
@@ -42,3 +45,22 @@ btnFiltrar.onclick = async () =>{
     attributePesquisa.value = "Attribute"
 }
 
+async function filtrarPesquisa(){
+    const campoInput = document.getElementById("pesquisar").value;
+    console.log(campoInput)
+    if(campoInput.length <= 2){
+        alert("No minimo 3 caracteres")
+    }
+    
+    try{
+        const dadosDaApi = await api.pegarDadosDaApi()
+        console.log(dadosDaApi)
+        const pesquisaFiltrada = dadosDaApi.data.filter(card => {
+            return card.name.includes(campoInput)
+        })
+        
+        console.log(pesquisaFiltrada)
+    } catch{
+        alert('erro ao filtrar pesquisa')
+    }
+}
