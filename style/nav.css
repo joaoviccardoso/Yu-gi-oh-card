@@ -1,27 +1,28 @@
 .container-nav{
     display: flex;
-    justify-content: space-between;
-    height: 90px;
-    background-color: #0d0d0d;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    height: 120px;
 }
 
 .link-titulo{
-    align-self: center;
-    margin-left: 1rem;
+    margin-bottom: 2rem;
 }
 
 .ul-links{
     display: flex;
-    gap: 1.5rem;
-    margin-right: 1rem;
+    gap: .5rem;
+    padding: 0;
 }
 
-.links-item{
-    margin-top: .5rem;
+.texto-link{
+    margin: 0;
+    font-size: 12px;
 }
 
 .img-link{
-    width: 45px;
+    width: 35px;
 }
 
 .link{

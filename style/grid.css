@@ -1,21 +1,21 @@
 :root{
     --font: "Roboto";
     --cor-fundo: #111111;
-    --cor-container: #0B192C;
+    --cor-container: rgba(0,0,0 , .6);
     --cor-container-2: #1E3E62;
     --cor-hover:#FF6500;
     --cor-letras: #fff;
 }
 
 body{
-    background: var(--cor-fundo);
+    background-image: url(../img/fundoBack.jpg);
     height: 100vh;
     color: var(--cor-letras);
     font-family: var(--font);
     font-size: 1rem     ;
     font-weight: 400;
     display: grid;
-    grid-template-rows: 100px calc(100vh - 100px);
+    grid-template-rows: 100px calc(100vh - 120px);
     grid-template-columns:30% 43% 27%;
     grid-template-areas: 
     "nav nav nav"
@@ -39,7 +39,7 @@ body{
     grid-area: centro;
     background-color: var(--cor-container);
     border-radius: 12px;
-    height: calc(100vh - 120px);
+    height: calc(100vh - 140px);
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
