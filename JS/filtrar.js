@@ -56,7 +56,7 @@ async function filtrarPesquisa(){
         const dadosDaApi = await api.pegarDadosDaApi()
         console.log(dadosDaApi)
         const pesquisaFiltrada = dadosDaApi.data.filter(card => {
-            return card.name.includes(campoInput)
+            return card.name.replace(/\s+/g, '').toLowerCase().includes(removeEspaco(campoInput))
         })
 
         if(pesquisaFiltrada.length === 0){
@@ -73,4 +73,8 @@ async function filtrarPesquisa(){
     } catch{
         alert('erro ao filtrar pesquisa')
     }
+}
+
+function removeEspaco(string){
+    return string.replace(/\s+/g, '').toLowerCase();
 }
