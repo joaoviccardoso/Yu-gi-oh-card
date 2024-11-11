@@ -47,3 +47,13 @@ body{
 .aside-direita{
     grid-area: direta;
 }
+
+.btn{
+    width: 6rem;
+    height: 36px;
+    border: 1px solid var(--cor-container-2);
+    border-radius: 0;
+    font-size: 13px;
+    background-color: var(--cor-container-2);
+    clip-path: polygon(20% 0%, 100% 0, 100% 11%, 100% 62%, 83% 100%, 20% 100%, 0 100%, 0 0);
+}

@@ -42,11 +42,6 @@
     font-size: 1rem;
 }
 
-#pesquisarBtn{
-    width: 90px;
-    font-size: 12px;
-}
-
 .pesquisar{
    background-color: var(--cor-container-2);
    color: var(--font);

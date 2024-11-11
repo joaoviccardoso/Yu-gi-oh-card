@@ -27,10 +27,6 @@
     border-radius: 12px;
 }
 
-.btn-primary{
-    border-radius: 24px;
-}
-
 .saberMais{
     text-decoration: none;
     color: var(--cor-letras);
