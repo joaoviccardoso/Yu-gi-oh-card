@@ -1,11 +1,16 @@
 const btnFiltrar = document.getElementById("filtrar");
 const btnPesquisar = document.getElementById("pesquisarBtn");
+const btnFiltrarDef = document.getElementById("filtrarDef");
+const btnFiltrarAtk = document.getElementById("filtrarAtk");
 const categoryPesquisa = document.querySelector(".category");
 const levelPesquisa = document.querySelector(".level");
 const attributePesquisa = document.querySelector(".attribute");
 
-btnPesquisar.addEventListener("click", filtrarPesquisa)
+btnFiltrarDef.addEventListener("click", filtrarDef);
+btnFiltrarAtk.addEventListener("click", filtrarAtk);
+btnPesquisar.addEventListener("click", filtrarPesquisa);
 
+//Filtrar por categorias
 btnFiltrar.onclick = async () =>{
     const meuSet = new Set()
     let meuSetArray = [];
@@ -45,6 +50,7 @@ btnFiltrar.onclick = async () =>{
     attributePesquisa.value = "Attribute"
 }
 
+//Filtrar por pesquisa
 async function filtrarPesquisa(){
     const campoInput = document.getElementById("pesquisar").value;
     console.log(campoInput)
@@ -75,6 +81,48 @@ async function filtrarPesquisa(){
     }
 }
 
+//filtrar card pela Def
+async function filtrarDef(){
+    const minDef = document.getElementById("min-def").value;
+    const maxDef = document.getElementById("max-def").value;
+
+    try {
+        const dadosDaApi = await api.pegarDadosDaApi()
+
+        const cardDef = dadosDaApi.data.filter(card =>{
+            console.log(card.def)
+            if (card.def >= minDef && card.def <= maxDef){
+                return card
+            }
+        })
+        
+        console.log(cardDef)
+    } catch (error) {
+        alert("erro ao Filtrar a def das card", error)
+    }
+}
+
+//filtrar card pela Atk
+async function filtrarAtk(){
+    const minAtk = document.getElementById("min-atk").value;
+    const maxAtk = document.getElementById("max-atk").value;
+
+    try {
+        const dadosDaApi = await api.pegarDadosDaApi()
+
+        const cardAtk = dadosDaApi.data.filter(card =>{
+            if(card.atk >= minAtk && card.atk <= maxAtk){
+                return card
+            }
+        })
+
+        console.log(cardAtk)
+    } catch (error) {
+        alert("erro ao Filtrar a def das card", error)
+    }
+}
+
+//função remove espaço
 function removeEspaco(string){
     return string.replace(/\s+/g, '').toLowerCase();
 }
