@@ -12,8 +12,11 @@
 
 .card{
     width: 180px;
+    cursor: pointer;
 }
 
 .card:hover{
     box-shadow: var(--cor-hover) 0px 10px 36px 0px, var(--cor-hover) 0px 0px 0px 1px;
+    width: 200px;
+    transition: .4s;
 }

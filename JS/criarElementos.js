@@ -13,7 +13,7 @@ async function criarElementoEsquesta(dadosApi){
     const imgInfo = document.createElement("img");
     imgInfo.classList.add("img-info");
     imgInfo.alt = "card" 
-    imgInfo.src = `${dadosApi.data[0].card_images[0].image_url_small}`
+    imgInfo.src = `${dadosApi.data[0].card_images[0].image_url}`
 
     const divContainerInfoCard = document.createElement("div");
     divContainerInfoCard.classList.add("container-informação-carta");
@@ -112,7 +112,8 @@ function criarElementoCard(card){
 
   const img = document.createElement("img");
   img.classList.add("card")
-  img.src = `${card.card_images[0].image_url_small}`
+  img.loading = "lazy"
+  img.src = `${card.card_images[0].image_url}`
   img.alt = "card"
   img.id = `${card.id}`
   img.onclick = function() {

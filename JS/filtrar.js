@@ -60,7 +60,7 @@ async function filtrarPesquisa(){
     
     try{
         const dadosDaApi = await api.pegarDadosDaApi()
-        console.log(dadosDaApi)
+        
         const pesquisaFiltrada = dadosDaApi.data.filter(card => {
             return card.name.replace(/\s+/g, '').toLowerCase().includes(removeEspaco(campoInput))
         })
@@ -85,8 +85,6 @@ async function filtrarPesquisa(){
 async function filtrarDef(){
     const minDef = document.getElementById("min-def");
     const maxDef =  document.getElementById("max-def");
-
-    console.log(minDef)
 
     if(minDef == "" || maxDef == ""){
         alert("Coloque valor nos dois campo para filtrar")
@@ -130,6 +128,7 @@ async function filtrarAtk(){
 
     try {
         const dadosDaApi = await api.pegarDadosDaApi()
+        console.log(dadosDaApi)
 
         const cardAtk = dadosDaApi.data.filter(card =>{
             if(card.atk >= Number(minAtk.value) && card.atk <= Number(maxAtk.value)){
