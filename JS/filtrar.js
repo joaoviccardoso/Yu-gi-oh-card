@@ -83,20 +83,36 @@ async function filtrarPesquisa(){
 
 //filtrar card pela Def
 async function filtrarDef(){
-    const minDef = document.getElementById("min-def").value;
-    const maxDef = document.getElementById("max-def").value;
+    const minDef = document.getElementById("min-def");
+    const maxDef =  document.getElementById("max-def");
+
+    console.log(minDef)
+
+    if(minDef == "" || maxDef == ""){
+        alert("Coloque valor nos dois campo para filtrar")
+        return 
+    }
 
     try {
         const dadosDaApi = await api.pegarDadosDaApi()
 
         const cardDef = dadosDaApi.data.filter(card =>{
             console.log(card.def)
-            if (card.def >= minDef && card.def <= maxDef){
+            if (card.def >= Number(minDef.value) && card.def <= Number(maxDef.value)){
                 return card
             }
         })
+
+        containerCards.innerHTML = ""
         
-        console.log(cardDef)
+        if(cardDef.length === 0){
+            containerCards.innerHTML = "<p>Nenhuma carta encontrada para os valores de DEF fornecidos.</p>";
+        } else{
+            cardDef.forEach(card => criarElementoCard(card))
+        }
+
+        minDef.value = "";
+        maxDef.value = "";
     } catch (error) {
         alert("erro ao Filtrar a def das card", error)
     }
@@ -104,19 +120,33 @@ async function filtrarDef(){
 
 //filtrar card pela Atk
 async function filtrarAtk(){
-    const minAtk = document.getElementById("min-atk").value;
-    const maxAtk = document.getElementById("max-atk").value;
+    const minAtk = document.getElementById("min-atk");
+    const maxAtk = document.getElementById("max-atk");
+
+    if(minAtk === "" || maxAtk === ""){
+        alert("coloque um valor para filtrar o atk")
+        return
+    }
 
     try {
         const dadosDaApi = await api.pegarDadosDaApi()
 
         const cardAtk = dadosDaApi.data.filter(card =>{
-            if(card.atk >= minAtk && card.atk <= maxAtk){
+            if(card.atk >= Number(minAtk.value) && card.atk <= Number(maxAtk.value)){
                 return card
             }
         })
 
-        console.log(cardAtk)
+        containerCards.innerHTML = ""
+
+        if(cardAtk.length === 0){
+            containerCards.innerHTML = "<p>Nenhuma carta encontrada para os valores de ATK fornecidos.</p>";
+        } else{
+            cardAtk.forEach(card => criarElementoCard(card))
+        }
+        
+        minAtk.value = "";
+        maxAtk.value = "";
     } catch (error) {
         alert("erro ao Filtrar a def das card", error)
     }
