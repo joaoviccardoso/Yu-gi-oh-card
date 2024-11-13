@@ -76,3 +76,19 @@
 .img-info{
     width: 300px;
 }
+
+.container-btn-fechar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-fechar-janela{
+    background: none;
+    border: none;
+}
+
+.icone-fechar-janela{
+    width: 50px;
+}
