@@ -28,10 +28,29 @@ async function criarElementoEsquesta(dadosApi){
     btnAddCardAoDeck.id = "btnAdd"
     btnAddCardAoDeck.textContent = "Add Card"
 
+   
     //adiciona o btn fechar e btn add no container
     btnFecharJanela.appendChild(iconeFecharJanela)
     containerBtnFechar.appendChild(btnFecharJanela);
     containerBtnFechar.appendChild(btnAddCardAoDeck);
+    divContainerPrincipal.appendChild(containerBtnFechar)
+
+    //adiciona evento de click nos botoes de fechar janela e add card para o deck
+    btnFecharJanela.addEventListener("click", () => {
+      asideEsquerda.innerHTML = "";
+
+      asideEsquerda.innerHTML = `
+        <div class="container-aside-esquerdo-quadradro">
+            <img src="./img/yugioh logo.png" alt="logo do yugioh" width="250">
+            <p class="texto-asideEsquerto">Yu-Gi-Oh! é um jogo de cartas colecionáveis onde dois jogadores duelam usando monstros, magias e armadilhas para reduzir os pontos de vida do oponente a zero. Cada carta possui efeitos e atributos únicos, permitindo aos jogadores criarem estratégias e construírem decks personalizados para vencerem seus adversários.</p>
+            <button type="button" class="btn btn-primary"><a href="#" class="saberMais">Saber mais.</a></button>
+        </div>
+      `
+    })
+
+    btnAddCardAoDeck.addEventListener("click", () => {
+      alert("Esta funcionalidade nao esta pronta ainda.")
+    })
 
     //criar o container das fotos da card
     const imgInfo = document.createElement("img");
@@ -121,7 +140,6 @@ async function criarElementoEsquesta(dadosApi){
     divContainerInfoImg.appendChild(imgInfo)
     divContainerInfoCard.appendChild(ulInfo)
     divContainerInfoCard.appendChild(divDescricao)
-    divContainerPrincipal.appendChild(containerBtnFechar)
     divContainerPrincipal.appendChild(divContainerInfoImg)
     divContainerPrincipal.appendChild(divContainerInfoCard)
     asideEsquerda.appendChild(divContainerPrincipal)

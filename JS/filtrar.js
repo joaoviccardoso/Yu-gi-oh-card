@@ -56,6 +56,7 @@ async function filtrarPesquisa(){
     console.log(campoInput)
     if(campoInput.length <= 2){
         alert("No minimo 3 caracteres")
+        return
     }
     
     try{
