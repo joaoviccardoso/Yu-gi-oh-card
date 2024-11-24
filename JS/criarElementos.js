@@ -148,10 +148,12 @@ async function criarElementoEsquesta(dadosApi){
 async function criarListaCard(){
   const respostaApi = await api.pegarDadosDaApi()
   let cardHtml = '';
+
   try{
-    respostaApi.data.forEach(card =>{
+    for (let i = 0; i < 3000; i++) {
+      const card = respostaApi.data[i];
       criarElementoCard(card)
-    });
+    }
   } catch {
     alert("erro ao criar os cards")
   }
@@ -180,3 +182,22 @@ async function pegarElementoClicado(id){
   criarElementoEsquesta(dadoDaCardClicada)
 }
 
+//Criar card do filtro de atk e def
+async function criarCardFiltroAtkDef(card){
+  containerCards.innerHTML = ""
+            
+  if(card.length === 0){
+    containerCards.innerHTML = "<p>Nenhuma carta encontrada para os valores de DEF fornecidos.</p>";
+  } else{
+    card.forEach(card => criarElementoCard(card))
+  }
+   
+  const minDef = document.getElementById("min-def");
+  const maxDef =  document.getElementById("max-def");
+  const minAtk = document.getElementById("min-atk");
+  const maxAtk = document.getElementById("max-atk");
+  minDef.value = "";
+  maxDef.value = "";
+  minAtk.value = "";
+  maxAtk.value = "";
+}
