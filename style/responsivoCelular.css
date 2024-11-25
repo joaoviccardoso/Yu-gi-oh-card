@@ -1,0 +1,64 @@
+@media (min-width: 250px) and (max-width: 1400px){
+    body{
+        display: grid;
+        grid-template-rows:15% 50% 35%;
+        grid-template-columns:100vw;
+        grid-template-areas: 
+        "cabecalho"
+        "main"
+        "filtro"
+        ;
+        height: 100vh;
+        background-repeat: no-repeat;
+    }
+
+    .container-nav{
+        grid-area: cabecalho;
+    }
+
+    .main{
+        grid-area: main-centro;
+    }
+
+    .aside-direita{
+        grid-area: filtro;
+    }
+
+
+    .ul-links{
+        display: none;
+    }
+    /*container dos filtros*/
+    .grupo-filtros{
+       display: grid;
+       grid-template-rows:20% 80%;
+       grid-template-columns:50% 50%;
+       grid-template-areas: 
+       "pesquisarPorNome pesquisarPorNome"
+       "pesquisarPorCategory pesquisarPorAtkDef"
+       ;
+       height: 300px;
+    }
+
+    .texto-filtro{
+        display: none;
+    }
+
+    .texto-pesquisar{
+        grid-area: pesquisarPorNome;
+    }
+
+    .container-item{
+        grid-area: pesquisarPorCategory;
+    }
+
+    .containerAtkDef{
+        grid-area: pesquisarPorAtkDef;
+    }
+
+    .aside-esquerda{
+        display: none;
+    }
+
+}
+

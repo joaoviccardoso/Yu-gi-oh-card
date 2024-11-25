@@ -57,3 +57,7 @@ body{
     background-color: var(--cor-container-2);
     clip-path: polygon(20% 0%, 100% 0, 100% 11%, 100% 62%, 83% 100%, 20% 100%, 0 100%, 0 0);
 }
+
+.btnAtkDef{
+    height: 46px;
+}

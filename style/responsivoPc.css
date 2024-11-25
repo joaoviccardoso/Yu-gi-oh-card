@@ -1,0 +1,9 @@
+@media (min-width:1401px){
+    .textoMobile{
+        display: none;
+    }
+
+    .container-texto-mobile{
+        display: none;
+    }
+}
