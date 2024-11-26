@@ -150,7 +150,7 @@ async function criarListaCard(){
   let cardHtml = '';
 
   try{
-    for (let i = 0; i < 3000; i++) {
+    for (let i = 0; i < 2000; i++) {
       const card = respostaApi.data[i];
       criarElementoCard(card)
     }

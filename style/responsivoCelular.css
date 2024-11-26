@@ -1,7 +1,7 @@
 @media (min-width: 250px) and (max-width: 1400px){
     body{
         display: grid;
-        grid-template-rows:15% 50% 35%;
+        grid-template-rows:8% 55% 37%;
         grid-template-columns:100vw;
         grid-template-areas: 
         "cabecalho"
@@ -10,24 +10,56 @@
         ;
         height: 100vh;
         background-repeat: no-repeat;
+        align-items: center;
+        justify-content: center;
     }
-
+    
+    /*item do header da pagina*/
     .container-nav{
         grid-area: cabecalho;
+        height: auto;
     }
 
-    .main{
-        grid-area: main-centro;
+    .ul-links{
+        margin-top: .5rem;
     }
 
+    .logoDaPagina{
+        width: 150px;
+    }
+
+    .img-link{
+        width: 20px;
+    }
+
+    /*item do main da pagina*/
+    .main-centro{
+        grid-area: main;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 420px;
+        margin: 0 .5rem;
+    }
+
+    .container-card{
+        height: 380px;
+        margin: 0;
+    }
+
+    .card{
+        width: 115px;
+    }
+
+    .card:hover{
+        box-shadow: var(--cor-hover) 0px 10px 36px 0px, var(--cor-hover) 0px 0px 0px 1px;
+    }
+
+    /*item do filtros*/
     .aside-direita{
         grid-area: filtro;
     }
 
-
-    .ul-links{
-        display: none;
-    }
     /*container dos filtros*/
     .grupo-filtros{
        display: grid;
@@ -37,7 +69,8 @@
        "pesquisarPorNome pesquisarPorNome"
        "pesquisarPorCategory pesquisarPorAtkDef"
        ;
-       height: 300px;
+       height: 330px;
+       margin-bottom: 1rem;
     }
 
     .texto-filtro{
