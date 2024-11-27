@@ -81,7 +81,7 @@ async function filtrarPesquisa(){
     }
 }
 
-//filtrar card pela Def
+//filtrar card pela Def e o Atk
 async function filtrarDef(){
     //pega os valores do input de def
     const minDef = document.getElementById("min-def").value;
@@ -90,6 +90,12 @@ async function filtrarDef(){
     //pega os valores do input de atk
     const minAtk = document.getElementById("min-atk").value;
     const maxAtk = document.getElementById("max-atk").value;
+
+    //Verifica se o campo de input possui algum valor para poder filtrar
+    if((minAtk == "" || maxAtk == "") && (minDef == "" || maxDef == "")){
+        alert("Coloque um valor para filtrar as cards pelo ATK e DEF.")
+        return
+    }
 
     if(minAtk && maxAtk && minDef && maxDef){
         try {
