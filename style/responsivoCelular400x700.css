@@ -1,4 +1,4 @@
-@media (min-width: 250px) and (max-width: 1400px){
+@media (min-width: 250px) and (max-width: 700px){
     body{
         display: grid;
         grid-template-rows:8% 55% 37%;
@@ -25,7 +25,7 @@
     }
 
     .logoDaPagina{
-        width: 150px;
+        width: 9.37rem;
     }
 
     .img-link{
@@ -38,12 +38,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 420px;
+        height: 26.25rem;
         margin: 0 .5rem;
     }
 
     .container-card{
-        height: 380px;
+        height: 23.75rem;
         margin: 0;
     }
 
@@ -69,7 +69,7 @@
        "pesquisarPorNome pesquisarPorNome"
        "pesquisarPorCategory pesquisarPorAtkDef"
        ;
-       height: 330px;
+       height: 20.65rem;
        margin-bottom: 1rem;
     }
 
@@ -77,21 +77,37 @@
         display: none;
     }
 
-    .texto-pesquisar{
+    .container-search{
         grid-area: pesquisarPorNome;
+        margin-left: 1rem;
     }
 
     .container-item{
         grid-area: pesquisarPorCategory;
+        margin: 0 0 0 1rem;
     }
 
     .containerAtkDef{
         grid-area: pesquisarPorAtkDef;
     }
 
+    .atkEdef{
+        width: 4rem;
+    }
+
     .aside-esquerda{
         display: none;
     }
-
 }
+
+@media (min-width: 250px) and (max-width: 389px){
+    .grupo-filtros{
+        height: 17.25rem;
+    }
+
+    .main-centro{
+        height: 19rem;
+    }
+}
+
 
