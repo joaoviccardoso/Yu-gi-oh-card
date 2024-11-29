@@ -17,19 +17,27 @@
     /*item do header da pagina*/
     .container-nav{
         grid-area: cabecalho;
-        height: auto;
+        height: 60px;
+        margin-top: .5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .ul-links{
-        margin-top: .5rem;
+        margin-top: 1rem;
     }
 
     .logoDaPagina{
-        width: 9.37rem;
+        width: 160px;
     }
 
     .img-link{
-        width: 20px;
+        width: 25px;
+    }
+
+    .texto-link{
+        display: none;
     }
 
     /*item do main da pagina*/
@@ -80,6 +88,7 @@
     .container-search{
         grid-area: pesquisarPorNome;
         margin-left: 1rem;
+        margin-right: 1rem;
     }
 
     .container-item{
@@ -95,6 +104,10 @@
         width: 4rem;
     }
 
+    .atkEdef::placeholder{
+        font-size: 12px;
+    }
+
     .aside-esquerda{
         display: none;
     }
@@ -107,6 +120,18 @@
 
     .main-centro{
         height: 19rem;
+    }
+
+    .container-card{
+        height: 18rem;
+    }
+
+    .card{
+        width: 100px;
+    }
+
+    .card:hover{
+        display: none;
     }
 }
 
