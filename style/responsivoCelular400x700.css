@@ -40,28 +40,51 @@
         display: none;
     }
 
+    /**/
+    .aside-esquerda{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        background-color: rgba(0, 0, 0, .8);
+    }
+
+    .container-aside-esquerdo{
+        width: 90vw;
+    }
+
+    .img-info{
+        width: 240px;
+    }
+
+    .container-aside-esquerdo-quadradro{
+        display: none;
+    }
+
     /*item do main da pagina*/
     .main-centro{
         grid-area: main;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 26.25rem;
+        height: 420px;
         margin: 0 .5rem;
     }
 
     .container-card{
-        height: 23.75rem;
-        margin: 0;
+        height: 380px; 
     }
 
     .card{
-        width: 115px;
+        width: 100px;
     }
 
-    .card:hover{
-        box-shadow: var(--cor-hover) 0px 10px 36px 0px, var(--cor-hover) 0px 0px 0px 1px;
+    .card:active{
+        transform: scale(0.95);
+        border: 2px solid blue; 
     }
+
 
     /*item do filtros*/
     .aside-direita{
@@ -107,10 +130,6 @@
     .atkEdef::placeholder{
         font-size: 12px;
     }
-
-    .aside-esquerda{
-        display: none;
-    }
 }
 
 @media (min-width: 250px) and (max-width: 389px){
@@ -125,14 +144,4 @@
     .container-card{
         height: 18rem;
     }
-
-    .card{
-        width: 100px;
-    }
-
-    .card:hover{
-        display: none;
-    }
 }
-
-
