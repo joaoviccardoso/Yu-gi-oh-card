@@ -9,7 +9,7 @@
 
 .body-deck{
     display: grid;
-    grid-template-rows:100px calc(100vh - 100px);
+    grid-template-rows:130px calc(100vh - 130px);
     grid-template-columns:30% 70%;
     grid-template-areas: 
     "nav nav"
@@ -29,7 +29,7 @@
     grid-area: nav;
 }
 
-.container-aside{
+.aside-esquerda{
     grid-area: aside;
     border: 1px solid var(--cor-letras);
 }

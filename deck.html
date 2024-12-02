@@ -4,19 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yu-gi-oh!</title>
+    <link rel="stylesheet" href="./style/reset.css">
+    <link rel="stylesheet" href="./style/nav.css">
+    <link rel="stylesheet" href="./style/asideEsquerdo.css">
+    <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="./style/">
     <link rel="stylesheet" href="styleDeck/deckBody.css">
+    <link rel="stylesheet" href="./styleDeck/containerDeck.css">
 </head>
     <body class="body-deck">
         <nav class="container-nav">
-
+            <ul class="ul-links">
+           
+                <li class="links-item">
+                     <a href="https://github.com/joaoviccardoso" class="link">
+                         <img src="./img/github.png" alt="github" class="img-link">
+                     </a>
+                </li>
+     
+                <li class="links-item">
+                     <a href="https://www.linkedin.com/in/jo%C3%A3o-victor-da-silva-cardoso-b66315248/" class="link">
+                         <img src="./img/linkedin.png" alt="linkedin" class="img-link">
+                     </a>
+                </li>
+                
+             </ul>
+     
+             <div>
+                 <a href="index.html" class="link-titulo">
+                     <img src="./img/yugioh logo.png" alt="logo do yugioh" width="260" class="logoDaPagina">
+                 </a>
+             </div>
+     
+             <ul class="ul-links">
+     
+                <li class="links-item">
+                     <a href="deck.html" class="link">
+                         <img src="./img/jogos-de-cartas.png" alt="Seu deck" class="img-link">
+                     </a>
+                </li>
+                
+                <li class="links-item">
+                     <a href="https://github.com/joaoviccardoso" class="link">
+                         <img src="./img/github.png" alt="github" class="img-link">
+                     </a>
+                </li>
+                
+             </ul>
         </nav>
 
-        <aside class="container-aside">
+        <aside class="aside-esquerda">
+            <section class="container-aside-esquerdo">
 
+            </section>
         </aside>
 
         <main class="container-main">
             <div class="container-deck">
+            
+            </div>
 
             </div>
 
@@ -24,5 +70,11 @@
 
             </div>    
         </main>
+       
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="./JS/api.js"></script>
+        <script src="./JS/filtrar.js"></script>
+        <script src="./JS/criarElementos.js"></script>
+        <script src="./JS/adicionarCard.js"></script>
     </body>
 </html>

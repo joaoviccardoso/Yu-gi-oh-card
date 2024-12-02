@@ -29,10 +29,6 @@ body{
 
 .aside-esquerda{
     grid-area: esquerto;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .main-centro{

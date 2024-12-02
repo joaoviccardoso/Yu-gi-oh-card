@@ -1,0 +1,16 @@
+/*parte do container deck*/
+.container-deck{
+    border: 1px solid var(--cor-letras);
+    border-radius: 8px;
+    height: 60%;
+    margin: .2rem;
+}
+
+.container-extradeck{
+    border: 1px solid var(--cor-letras);
+    border-radius: 8px;
+    height: 38.5%;
+    margin: .2rem;
+}
+
+/*parte do container extradeck*/

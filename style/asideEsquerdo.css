@@ -1,3 +1,9 @@
+.aside-esquerda{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .container-aside-esquerdo{
     width: 80%;
     height: auto;
