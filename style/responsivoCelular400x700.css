@@ -44,14 +44,13 @@
     .aside-esquerda{
         position: absolute;
         left: 50%;
-        top: 50%;
+        top: 54%;
         transform: translate(-50%, -50%);
         z-index: 2;
-        background-color: rgba(0, 0, 0, .8);
     }
 
     .container-aside-esquerdo{
-        width: 90vw;
+        width: 80vw;
     }
 
     .img-info{
@@ -82,7 +81,7 @@
 
     .card:active{
         transform: scale(0.95);
-        border: 2px solid blue; 
+        border: 2px solid var(--cor-hover); 
     }
 
 
@@ -133,6 +132,11 @@
 }
 
 @media (min-width: 250px) and (max-width: 389px){
+    
+    .img-info{
+        width: 200px;
+    }
+
     .grupo-filtros{
         height: 17.25rem;
     }
