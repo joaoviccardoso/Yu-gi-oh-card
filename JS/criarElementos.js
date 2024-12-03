@@ -56,6 +56,19 @@ async function criarElementoEsquesta(dadosApi){
 
       if (!Array.isArray(meuDeck)) meuDeck = [];
       if (!Array.isArray(meuExtraDeck)) meuExtraDeck = [];
+
+      //verifica se tem mais de 3 card repetido no deck 
+      const quantidadeCardNoDeck = meuDeck.filter(card => card.data[0].id === dadosApi.data[0].id);
+      if(quantidadeCardNoDeck.length === 3){
+        alert("Quantidade maxima de copia de card por deck são 3 copias")
+        return;
+      }
+
+      const quantidadeCardNoExtrDeck = meuExtraDeck.filter(card => card.data[0].id === dadosApi.data[0].id);
+      if(quantidadeCardNoExtrDeck.length === 3){
+        alert("Quantidade maxima de copia de card por deck são 3 copias")
+        return;
+      }
       
       const tiposExtraDeck = ["xyz", "synchro", "fusion"]
 
@@ -82,8 +95,8 @@ async function criarElementoEsquesta(dadosApi){
         }} catch (error) {
           alert("erro ao adicionar card ao deck", error)
         }
-  
-      
+        
+        alert("card adicionado no deck")
     })
 
     //criar o container das fotos da card
