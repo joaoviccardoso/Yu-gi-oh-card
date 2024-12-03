@@ -1,6 +1,9 @@
 const containerCards = document.querySelector(".container-card");
 const asideEsquerda = document.querySelector(".container-aside-esquerdo")
 
+let meuDeck = JSON.parse(localStorage.getItem("deck")) || [];
+let meuExtraDeck = JSON.parse(localStorage.getItem("ExtraDeck")) || [];
+
 async function criarElementoEsquesta(dadosApi){
     asideEsquerda.innerHTML = "";
 
@@ -28,7 +31,6 @@ async function criarElementoEsquesta(dadosApi){
     btnAddCardAoDeck.id = "btnAdd"
     btnAddCardAoDeck.textContent = "Add Card"
 
-   
     //adiciona o btn fechar e btn add no container
     btnFecharJanela.appendChild(iconeFecharJanela)
     containerBtnFechar.appendChild(btnFecharJanela);
@@ -47,9 +49,41 @@ async function criarElementoEsquesta(dadosApi){
         </div>
       `
     })
-
+    
+    //adiciona o card ao deck ou extradeck
     btnAddCardAoDeck.addEventListener("click", () => {
-      alert("Esta funcionalidade nao esta pronta ainda.")
+      const cardParaAddAoDeck = dadosApi;
+
+      if (!Array.isArray(meuDeck)) meuDeck = [];
+      if (!Array.isArray(meuExtraDeck)) meuExtraDeck = [];
+      
+      const tiposExtraDeck = ["xyz", "synchro", "fusion"]
+
+      try {
+        //faz uma verificação de o card perdence ao extra deck
+        if(tiposExtraDeck.includes(dadosApi.data[0].frameType)){
+          //verifica se passou da quantidade maxima de card no extra deck
+          if(meuExtraDeck.length >= 15){
+            alert("quantidade maxima de 15 card no ExtraDeck");
+            return;
+          } 
+          //adiciona card ao array extradeck e depois salva no localstorage
+          meuExtraDeck.push(cardParaAddAoDeck);
+          localStorage.setItem("ExtraDeck", JSON.stringify(meuExtraDeck ));
+        } else {
+          //verifica se passou da quantidade maxima de card no deck
+          if(meuDeck.length >= 60){
+            alert("quantidade maxima de 60 card no deck")
+            return
+          }
+          //adiciona card ao array extradeck e depois salva no localstorage
+          meuDeck.push(cardParaAddAoDeck);
+          localStorage.setItem("deck", JSON.stringify(meuDeck));
+        }} catch (error) {
+          alert("erro ao adicionar card ao deck", error)
+        }
+  
+      
     })
 
     //criar o container das fotos da card
