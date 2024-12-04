@@ -211,6 +211,7 @@ async function criarListaCard(){
 //cria as card que ser colocado no main
 function criarElementoCard(card){
   const div = document.createElement("div");
+  div.classList.add("containerCardsMain")
 
   const img = document.createElement("img");
   img.classList.add("card")
