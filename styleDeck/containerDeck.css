@@ -1,16 +1,68 @@
 /*parte do container deck*/
 .container-deck{
-    border: 1px solid var(--cor-letras);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .5rem;
+    overflow-x: hidden;
     border-radius: 8px;
-    height: 60%;
+    height: 59%;
     margin: .2rem;
+    background-color: var(--cor-container);
 }
 
+
+
 .container-extradeck{
-    border: 1px solid var(--cor-letras);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .5rem;
+    overflow-x: hidden;
     border-radius: 8px;
-    height: 38.5%;
+    height: 36%;
     margin: .2rem;
+    background-color: var(--cor-container);
+}
+
+/*configura o container do nome do deck*/
+.container-nome-deck{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 42px;
+    border-radius: 8px;
+    background-color: var(--cor-container);
+}
+
+.container-icones{
+    gap: .5rem;
+    margin-right:.5rem ;
+}
+
+.container-nome-deck{
+    display: flex;
+    gap: .5rem;
+    margin-left:.5rem;
+
+}
+
+.img-nome-deck, .img-excluir-deck, .img-editar-deck{
+    width: 30px;
+    height: 30px;
+}
+
+.nomeDoDeck{
+    color: var(--cor-letras);
+    font-family: var(--font);
+    font-size: 2rem     ;
+    font-weight: 400;
+}
+
+.card{
+    width: 110px;
 }
 
 /*parte do container extradeck*/

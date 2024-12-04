@@ -1,7 +1,3 @@
-document.addEventListener("DOMContentLoaded",()=>{
-    criarListaCard()
-})
-
 api = {
     async pegarDadosDaApi() {
         try {

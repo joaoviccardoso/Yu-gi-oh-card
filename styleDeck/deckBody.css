@@ -25,16 +25,13 @@
 }
 
 .container-nav{
-    border: 1px solid var(--cor-letras);
     grid-area: nav;
 }
 
 .aside-esquerda{
     grid-area: aside;
-    border: 1px solid var(--cor-letras);
 }
 
 .container-main{
     grid-area: main;
-    border: 1px solid var(--cor-letras);
 }

@@ -192,6 +192,7 @@ async function criarElementoEsquesta(dadosApi){
     asideEsquerda.appendChild(divContainerPrincipal)
 }
 
+//cria a lista de card do index
 async function criarListaCard(){
   const respostaApi = await api.pegarDadosDaApi()
   let cardHtml = '';
@@ -206,6 +207,8 @@ async function criarListaCard(){
   }
 }
 
+
+//cria as card que ser colocado no main
 function criarElementoCard(card){
   const div = document.createElement("div");
 
@@ -240,7 +243,7 @@ async function criarCardFiltroAtkDef(card){
   }
    
   const minDef = document.getElementById("min-def");
-  const maxDef =  document.getElementById("max-def");
+  const maxDef = document.getElementById("max-def");
   const minAtk = document.getElementById("min-atk");
   const maxAtk = document.getElementById("max-atk");
   minDef.value = "";
