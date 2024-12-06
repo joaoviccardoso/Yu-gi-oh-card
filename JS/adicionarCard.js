@@ -6,6 +6,8 @@ const btnEditarDeck = document.querySelector(".img-editar-deck");
 btnExcluirDeck.addEventListener("click", limparLocalStorage);
 btnEditarDeck.addEventListener("click", criarEditorDeck);
 
+let idPorCard = 0;
+
 meuDeck.forEach(card => {
     const divCard = criarCardDoDeck(card, containerDeck)
 });
@@ -73,6 +75,7 @@ function criarCardDoEditor(card){
     //cria as informação da card
     const nomeDaCard = document.createElement("h3");
     nomeDaCard.classList.add("nomeCardEditar");
+    nomeDaCard.textContent = `${card.data[0].name}`
 
     const atkCard = document.createElement("p")
     atkCard.classList.add("cardATK");
@@ -82,13 +85,40 @@ function criarCardDoEditor(card){
     defCard.classList.add("cardDEF")
     defCard.textContent = `${card.data[0].def}`
 
+    const level = document.createElement("p");
+    level.classList.add("cardLevel")
+    level.textContent = `${card.data[0].level}`
+
     //cria o botao de excluir a card
     const btnExcluirCard = document.createElement("button");
     btnExcluirCard.classList.add("btnExcluir");
+    btnExcluirCard.id = `${idPorCard}`;
+    idPorCard++
+    btnExcluirCard.addEventListener("click", () => {
+        const arrayDeckLocalStorage = JSON.parse(localStorage.getItem("deck"));
+
+        console.log(btnExcluirCard.id)
+        console.log(arrayDeckLocalStorage)
+        console.log(arrayDeckLocalStorage[btnExcluirCard.id])
+        arrayDeckLocalStorage.splice(btnExcluirCard.id, 1);
+        
+        localStorage.setItem("deck", JSON.stringify(arrayDeckLocalStorage))
+        alert("Card removida do deck")
+        location.reload();
+    })
+
+    //cria a imagem que vai ser colocado no btn excluir
+    const imgBtn = document.createElement("img");
+    imgBtn.classList.add("imgDoBtnExcluir");
+    imgBtn.src = "img/excluir.png"
+
+    //adiciona a imagem no botao
+    btnExcluirCard.appendChild(imgBtn)
 
     //adiciona os elmentos na div de informação
     divContainerAtkDef.appendChild(atkCard);
     divContainerAtkDef.appendChild(defCard);
+    divContainerAtkDef.appendChild(level)
     divInfoCard.appendChild(nomeDaCard)
     divInfoCard.appendChild(divContainerAtkDef)
     

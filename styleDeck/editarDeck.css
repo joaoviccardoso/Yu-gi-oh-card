@@ -1,9 +1,25 @@
 .containerEditorDeck{
-    width: 350px;
+    width: 460px;
     height: 400px;
-    background-color: #fff;
+    background-color: rgba(0,0,0 , .7);;
+    overflow-x: hidden;
+}
+
+.containerCard{
+    display: flex;
+    justify-content: space-between;
+    margin-top: .8rem;
+    background-color: #1E3E62;
 }
 
 .imgEditar{
     width: 100px;
+}
+
+.imgDoBtnExcluir{
+    width: 40px;
+}
+
+.btnExcluir{
+    height: 55px;
 }

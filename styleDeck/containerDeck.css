@@ -7,12 +7,9 @@
     gap: .5rem;
     overflow-x: hidden;
     border-radius: 8px;
-    height: 59%;
-    margin: .2rem;
+    height: 58%;
     background-color: var(--cor-container);
 }
-
-
 
 .container-extradeck{
     display: flex;
@@ -23,7 +20,7 @@
     overflow-x: hidden;
     border-radius: 8px;
     height: 36%;
-    margin: .2rem;
+    margin-top: .5rem;
     background-color: var(--cor-container);
 }
 
