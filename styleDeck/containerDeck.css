@@ -7,7 +7,8 @@
     gap: .5rem;
     overflow-x: hidden;
     border-radius: 8px;
-    height: 58%;
+    height: 53%;
+    margin: .2rem 0 .2rem 0;
     background-color: var(--cor-container);
 }
 
@@ -20,7 +21,7 @@
     overflow-x: hidden;
     border-radius: 8px;
     height: 36%;
-    margin-top: .5rem;
+    margin: .2rem 0 .2rem 0;
     background-color: var(--cor-container);
 }
 
