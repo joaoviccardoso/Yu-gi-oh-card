@@ -1,59 +1,6 @@
-const containerDeck = document.querySelector(".container-deck");
-const containerExtraDeck = document.querySelector(".container-extradeck");
-const btnExcluirDeck = document.querySelector(".btnExluirDeck");
-const btnEditarDeck = document.querySelector(".img-editar-deck");
-
-btnExcluirDeck.addEventListener("click", limparLocalStorage);
-btnEditarDeck.addEventListener("click", criarEditorDeck);
-
 let idPorCard = 0;
 
-meuDeck.forEach(card => {
-    const divCard = criarCardDoDeck(card, containerDeck)
-});
-
-meuExtraDeck.forEach(card => {
-    const divCard = criarCardDoDeck(card, containerExtraDeck)
-})
-
-function limparLocalStorage(){
-    localStorage.clear()
-    alert("Deck Excluido")
-    location.reload(true)
-}
-
-function criarEditorDeck(){
-    const divEditorDeck  = document.createElement("div");
-    divEditorDeck.classList.add("containerEditorDeck");
-
-    asideEsquerda.innerHTML = "";
-
-    meuDeck.forEach(card =>{
-        const cardParaEditar = criarCardDoEditor(card);
-        divEditorDeck.appendChild(cardParaEditar);
-    })
-
-    asideEsquerda.appendChild(divEditorDeck)   
-}
-
-function criarCardDoDeck(card, container){
-    const div = document.createElement("div");
-  
-    const img = document.createElement("img");
-    img.classList.add("card")
-    img.loading = "lazy"
-    img.src = `${card.data[0].card_images[0].image_url}`
-    img.alt = "card"
-    img.id = `${card.data[0].id}`
-    img.onclick = function() {
-        pegarElementoClicado(this.id)
-    }
-
-    div.appendChild(img)
-    container.appendChild(div)
-}
-
-function criarCardDoEditor(card){
+export function criarCardDoEditor(card){
     //cria o div do container da card
     const divContainerCard = document.createElement("div");
     divContainerCard.classList.add("containerCard")
@@ -89,6 +36,15 @@ function criarCardDoEditor(card){
     level.classList.add("cardLevel")
     level.textContent = `${card.data[0].level}`
 
+    //cria a div para colocar a disc
+    const divDesc = document.createElement("div");
+    divDesc.classList.add("containerDesc")
+
+    const descricao = document.createElement("p");
+    descricao.classList.add("descricroCard");
+    descricao.textContent = `${card.data[0].desc}`
+
+    divDesc.appendChild(descricao)
     //cria o botao de excluir a card
     const btnExcluirCard = document.createElement("button");
     btnExcluirCard.classList.add("btnExcluir");
@@ -97,9 +53,6 @@ function criarCardDoEditor(card){
     btnExcluirCard.addEventListener("click", () => {
         const arrayDeckLocalStorage = JSON.parse(localStorage.getItem("deck"));
 
-        console.log(btnExcluirCard.id)
-        console.log(arrayDeckLocalStorage)
-        console.log(arrayDeckLocalStorage[btnExcluirCard.id])
         arrayDeckLocalStorage.splice(btnExcluirCard.id, 1);
         
         localStorage.setItem("deck", JSON.stringify(arrayDeckLocalStorage))
@@ -119,6 +72,7 @@ function criarCardDoEditor(card){
     divContainerAtkDef.appendChild(atkCard);
     divContainerAtkDef.appendChild(defCard);
     divContainerAtkDef.appendChild(level)
+    divContainerAtkDef.appendChild(divDesc)
     divInfoCard.appendChild(nomeDaCard)
     divInfoCard.appendChild(divContainerAtkDef)
     
