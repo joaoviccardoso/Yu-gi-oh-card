@@ -24,18 +24,12 @@ export function criarCardDoEditor(card){
     nomeDaCard.classList.add("nomeCardEditar");
     nomeDaCard.textContent = `${card.data[0].name}`
 
-    const atkCard = document.createElement("p")
-    atkCard.classList.add("cardATK");
-    atkCard.textContent = `${card.data[0].atk}`
-
-    const defCard = document.createElement("p")
-    defCard.classList.add("cardDEF")
-    defCard.textContent = `${card.data[0].def}`
-
-    const level = document.createElement("p");
-    level.classList.add("cardLevel")
-    level.textContent = `${card.data[0].level}`
-
+    const type = document.createElement("p")
+    type.classList.add("tybe");
+    type.textContent = `${card.data[0].type}`
+        
+    divContainerAtkDef.appendChild(type)
+    
     //cria a div para colocar a disc
     const divDesc = document.createElement("div");
     divDesc.classList.add("containerDesc")
@@ -69,9 +63,6 @@ export function criarCardDoEditor(card){
     btnExcluirCard.appendChild(imgBtn)
 
     //adiciona os elmentos na div de informação
-    divContainerAtkDef.appendChild(atkCard);
-    divContainerAtkDef.appendChild(defCard);
-    divContainerAtkDef.appendChild(level)
     divContainerAtkDef.appendChild(divDesc)
     divInfoCard.appendChild(nomeDaCard)
     divInfoCard.appendChild(divContainerAtkDef)
