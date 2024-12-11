@@ -1,8 +1,30 @@
 .containerEditorDeck{
+    display: flex;
+    flex-direction: column;
     width: 460px;
     height: 500px;
     background-color: rgba(0,0,0 , .7);;
     overflow-x: hidden;
+}
+
+.divNomeDeckEditor{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nomeDeckEditor{
+    font-size: 2rem;
+}
+
+.btnFecharEditor{
+    background: none;
+    border: none;
+}
+
+.imgBtnFcharEditar{
+    margin-right: .6rem;
+    width: 50px;
 }
 
 .containerCard{

@@ -1,4 +1,4 @@
-import { criarCardDoEditor } from "./adicionaCardNoEditor.js";
+import { criarEditorDeck } from "./criarEditorDoDeck.js";
 import { criarCardDoDeck } from "./criarCardDeck.js";
 
 const containerDeck = document.querySelector(".container-deck");
@@ -22,20 +22,4 @@ function limparLocalStorage(){
     alert("Deck Excluido")
     location.reload(true)
 }
-
-function criarEditorDeck(){
-    const divEditorDeck  = document.createElement("div");
-    divEditorDeck.classList.add("containerEditorDeck");
-
-    asideEsquerda.innerHTML = "";
-
-    meuDeck.forEach(card =>{
-        const cardParaEditar = criarCardDoEditor(card);
-        divEditorDeck.appendChild(cardParaEditar);
-    })
-
-    asideEsquerda.appendChild(divEditorDeck);
-}
-
-
 
