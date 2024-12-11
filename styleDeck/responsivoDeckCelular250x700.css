@@ -1,0 +1,104 @@
+@media (min-width: 250px) and (max-width: 700px){
+    .body-deck{
+        display: grid;
+        grid-template-rows:10% 90%;
+        grid-template-columns:100vw;
+        grid-template-areas: 
+        "cabecalho"
+        "deck"
+        ;
+        height: 100vh;
+        background-repeat: no-repeat;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container-nav{
+        grid-area: cabecalho;
+    }
+
+    .logoDaPagina{
+        width: 150px;
+    }
+
+    .container-main{
+        grid-area: deck;
+        display: grid;
+        grid-template-rows:10% 50% 40%;
+        grid-template-columns:95%;
+        grid-template-areas: 
+        "nomeDeck"
+        "deck"
+        "extraDeck"
+        ;
+        height: 90vh;
+        background-repeat: no-repeat;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container-nome-deck{
+        grid-area: nomeDeck;
+    }
+
+    .container-deck{
+        grid-area: deck;
+        height: 390px;
+    }
+
+    .container-extradeck{
+        grid-area: extraDeck;
+        height: 280px;
+    }
+
+    .card{
+        width: 100px;
+    }
+
+    .extraDeckNome{
+        display: none;
+    }
+
+    .aside-esquerda{
+        position: absolute;
+        left: 50%;
+        top: 54%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+    }
+
+    .containerEditorDeck{
+        position: absolute;
+        left: 50%;
+        top: 54%;
+        transform: translate(-50%, -50%);
+        width: 120%;
+    }
+
+    .container-aside-esquerdo{
+        width: 300px;
+    }
+
+    .img-info{
+        width: 270px;
+    }
+
+    .container-aside-esquerdo-quadradro{
+        display: none; 
+    }
+}
+
+@media (min-width: 250px) and (max-width: 380px){
+    .container-deck{
+        height: 280px;
+    } 
+
+    .container-extradeck{
+        grid-area: extraDeck;
+        height: 220px;
+    }
+
+    .img-info{
+        width: 200px;
+    }
+}
