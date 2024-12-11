@@ -1,6 +1,11 @@
 import { criarCardDoEditor } from "./adicionaCardNoEditor.js";
 
 export function criarEditorDeck(){
+    
+    if(meuDeck.length === 0){
+        alert("Adicione uma card no deck para poder editar.")
+        return
+    }
     //cria o container que vai receber as card salvas
     const divEditorDeck  = document.createElement("div");
     divEditorDeck.classList.add("containerEditorDeck");
